@@ -1,0 +1,80 @@
+﻿<br />
+<br />
+<fieldset>
+    <div class="container">
+        <div class="col-md-12">
+            <form class="form-horizontal templatemo-login-form-2" ng-submit="vm.register()" role="form">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Tee-Up Registration</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <ul>
+                        <li ng-repeat="message in vm.validationMessages">
+                            {{message}}
+                        </li>
+                    </ul>
+                    <div class="templatemo-one-signin col-md-12">
+                        <!-- FIRST NAME -->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label class="control-label">First Name</label>
+                                <div class="templatemo-input-icon-container">
+                                    <i class="fa fa-user"></i>
+                                    <input type="text" class="form-control" ng-model="vm.registerUser.firstName" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- LAST NAME -->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label class="control-label">Last Name</label>
+                                <div class="templatemo-input-icon-container">
+                                    <i class="fa fa-user"></i>
+                                    <input type="text" class="form-control" ng-model="vm.registerUser.lastName" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- EMAIL -->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label class="control-label">Email</label>
+                                <div class="templatemo-input-icon-container">
+                                    <i class="fa fa-user"></i>
+                                    <input type="text" class="form-control" ng-model="vm.registerUser.email" placeholder="example@email.com">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Password Registration -->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label class="control-label">Select Password</label>
+                                <div class="templatemo-input-icon-container">
+                                    <i class="fa fa-lock"></i>
+                                    <input type="password" class="form-control" ng-model="vm.registerUser.password" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <!--Confirm PW-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label class="control-label">Confirm Password</label>
+                                <div class="templatemo-input-icon-container">
+                                    <i class="fa fa-lock"></i>
+                                    <input type="password" class="form-control" ng-model="vm.registerUser.confirmPassword" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="submit" value="Register" class="btn btn-warning">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</fieldset>

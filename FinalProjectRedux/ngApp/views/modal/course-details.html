@@ -1,0 +1,19 @@
+﻿<div class="container">
+    <div class="modal-header">
+        <div class="modal-title">
+            <h2>{{vm.product.name}}</h2>
+        </div>
+    </div>
+    <div class="modal-body">
+
+
+        <img ng-src="{{vm.product.imageUrl}}" />
+        <br />
+        <h4>{{vm.product.description}}</h4>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="vm.ok()">Ok</button>
+    </div>
+
+</div>

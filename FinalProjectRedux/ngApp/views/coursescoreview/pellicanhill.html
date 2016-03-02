@@ -1,0 +1,108 @@
+﻿<div id="wrapper" ng-show="account.isLoggedIn()">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    Start Bootstrap
+                </a>
+            </li>
+            <li>
+                <h3>Select Course</h3>
+            </li>
+            <li>
+                <a href="/scores">All Scores</a>
+            </li>
+            <li>
+                <a href="/oakcreek">Oak Creek Golf Course</a>
+            </li>
+            <li>
+                <a href="/pellicanhill">Pellican Hill Golf Resort</a>
+            </li>
+            <li>
+                <a href="/strawberryfarms">Strawberry Farms Golf Course</a>
+            </li>
+            <li>
+                <a href="/blackgold">Black Gold Golf Course</a>
+            </li>
+            <li>
+                <a href="/sanjuanhills">San Juan Hills Golf Club</a>
+            </li>
+            <li>
+                <a href="/coyotehills">Coyote Hills Golf Club</a>
+            </li>
+            <li>
+                <a href="/fullerton">Fullerton Golf Course</a>
+            </li>
+            <li>
+                <a href="/monarchbeach">Monarch Beach Golf Links</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div id="bannertaskstop" class="row">
+                <div class="col-lg-12" style="padding-top:50px;">
+                    <center><h1><font style="color:black;">Scores</font></h1></center>
+                    <form action="" class="search-form" style="width: 100%;">
+                        <btn id="menu-toggle" class="btn btn-default" style="margin-left:10px;">Filter Courses</btn>
+                        <div class="form-group has-feedback" style="margin-right:150px;">
+                            <label for="search" class="sr-only">Search...</label>
+                            <input type="text" class="form-control" name="search" ng-model="vm.search" id="search" placeholder="Search by Golfers Name...">
+                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="wrap_table">
+                            <form>
+                                <br />
+                                <table class="mine table table-hover">
+
+
+                                    <tr>
+                                        <th>Course</th>
+                                        <th>Golfers Name</th>
+                                        <th>Course Par</th>
+                                        <th>Final Score</th>
+                                        <th>Upload Scorecard</th>
+                                        <th>Edit/Delete</th>
+                                    </tr>
+                                    <tr ng-repeat="score in vm.scores | orderBy:'finalScore' | filter: {courseName: 'Pellican Hill Golf Resort'}">
+                                        <td><span><img alt="Brand" src="http://i.imgur.com/pK1ufyV.png" height="25" width="25"></span> {{score.courseName}}</td>
+                                        <td>{{score.golfersName}}</td>
+                                        <td>{{score.par}}</td>
+                                        <td>{{score.finalScore}}</td>
+                                        <td><a href="/photo"><span style="color: white" class="glyphicon glyphicon-camera"></span></a></td>
+                                        <td>
+                                            <a href="/edit/{{score.id}}"><span style="color: orangered" class="glyphicon glyphicon-edit"></span></a>
+                                            <a href="/delete/{{score.id}}"><span style="color: red" class="glyphicon glyphicon-trash"></span></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br />
+                                <div align="center"><a href="/add" class="btn btn-default">Add New Score</a></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+
+
+<script>
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    $('.datepicker').datepicker();
+</script>

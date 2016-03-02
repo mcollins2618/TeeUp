@@ -1,0 +1,88 @@
+﻿<br />
+<br />
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1>Submit New Scorecard</h1>
+
+    </div>
+</div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form novalidate ng-submit="vm.addScore()">
+                    <!--name="am"-->
+
+                    <div class="form-group">
+                        <label>Your Name: </label>
+                        <input type="text" class="form-control" ng-model="vm.scoreToAdd.golfersName" required />
+                        <span ng-show="vm.golfersName.$touched && vm.golfersName.$error.required" class="error">*This field is required</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Course</label>
+                        <select class="form-control" ng-model="vm.scoreToAdd.courseName">
+                            <option value="" selected disabled>Please select</option>
+                            <option>Oak Creek Golf Course</option>
+                            <option>Pellican Hill Golf Resort</option>
+                            <option>Strawberry Farms Golf Course</option>
+                            <option>Black Gold Golf Course</option>
+                            <option>San Juan Hills Golf Club</option>
+                            <option>Coyote Hills Golf Club</option>
+                            <option>Fullerton Golf Course</option>
+                            <option>Monarch Beach Golf Links</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Date:</label>
+                        <div id="datepicker" class="input-group date" data-date-format="mm/dd/yyyy" style="width:300px">
+                            <input class="form-control" type="text" ng-model="vm.scoreToAdd.datePlayed" placeholder="Enter Date Played" />
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Par:</label>
+                        <select class="form-control" ng-model="vm.scoreToAdd.par" style="width:100px">
+                            <option value="" selected disabled>Select</option>
+                            <option>68</option>
+                            <option>69</option>
+                            <option>70</option>
+                            <option>71</option>
+                            <option>72</option>
+                            <option>73</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Score:</label>
+                        <input type="text" class="form-control" ng-model="vm.scoreToAdd.finalScore" style="width:100px" required />
+                        <span ng-show="vm.finalScore.$touched && vm.finalScore.$error.required" class="error">*This field is required</span>
+                    </div>
+                    <div class="form-group">
+
+
+
+                        <button type="submit" class="btn btn-sm btn-default btn-block">
+                            Save <i ng-show="vm.loaded===false" class="fa fa-spinner fa-spin"></i>
+                        </button>
+                        <button class="btn btn-danger btn-block" ng-click="vm.cancelAdd()">Cancel</button>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+<script>
+$(function () {
+    $("#datepicker").datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        orientation: 'bottom'
+    }).datepicker('update', new Date()),
+ $("#datepicker2").datepicker({
+     autoclose: true,
+     todayHighlight: true,
+     orientation: 'bottom'
+ }).datepicker('update', new Date());
+});
+</script>

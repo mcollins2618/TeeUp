@@ -1,0 +1,71 @@
+﻿<br />
+<br />
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1>Edit Score</h1>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+
+
+
+        <form ng-submit="vm.editScore()">
+            <div class="form-group">
+                <label>Select Course</label>
+                <select class="form-control" ng-model="vm.scoreToEdit.courseName">
+                    <option value="" selected disabled>Please select</option>
+                    <option>Oak Creek Golf Course</option>
+                    <option>Pellican Hill Golf Resort</option>
+                    <option>Strawberry Farms Golf Course</option>
+                    <option>Black Gold Golf Course</option>
+                    <option>San Juan Hills Golf Club</option>
+                    <option>Coyote Hills Golf Club</option>
+                    <option>Fullerton Golf Course</option>
+                    <option>Monarch Beach Golf Links</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>
+                    Player Name:
+                </label>
+                <input type="text" ng-model="vm.scoreToEdit.golfersName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Date Played:</label>
+                <div id="datepicker" class="input-group date" data-date-format="mm/dd/yyyy" style="width:300px">
+                    <input class="form-control" type="text" ng-model="vm.scoreToEdit.datePlayed" placeholder="Enter Date Played" />
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>
+                    Score:
+                </label>
+                <input type="text" ng-model="vm.scoreToEdit.finalScore" class="form-control" />
+            </div>
+            <input class="btn btn-sm btn-warning btn-block" type="submit" value="Save Changes" />
+            <button class="btn btn-danger btn-block" ng-click="vm.cancelEdit()">Cancel</button>
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+$(function () {
+    $("#datepicker").datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        orientation: 'bottom'
+    }).datepicker('update', new Date()),
+ $("#datepicker2").datepicker({
+     autoclose: true,
+     todayHighlight: true,
+     orientation: 'bottom'
+ }).datepicker('update', new Date());
+});
+</script>

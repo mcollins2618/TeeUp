@@ -1,0 +1,23 @@
+﻿
+<table class="table table-bordered table-responsive table-hover deals_table table_wrap" style="margin-top:50px;">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr ng-repeat="user in vm.users | orderBy:'lastName' | filter: {lastName: vm.search}">
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            
+        </tr>
+        
+    </tbody>
+</table>
+
